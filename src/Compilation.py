@@ -2,8 +2,8 @@ import Playlist
 import time
 
 class Compilation:
-
-    def __init__(self,playlist : Playlist,temps : float, temps_pause : float, methode = 1):
+#Compilation : set of playlist
+    def __init__(self,playlist : Playlist, temps : float, temps_pause : float, methode = 1):
         self.playlists = [Playlist]
         self.temps_pause = temps_pause
         if methode == 1:
@@ -17,6 +17,7 @@ class Compilation:
         for playlist in self.playlists:
             playlist.doPlay()
             time.sleep(self.temps_pause)
+            
 
     
 

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+echo "usage : playtime [command] [options]"
+echo "Commandes pour employer PlayTime:"
+echo "Créer un set de musiques"
+echo -e "\tcreate\t [type] [source] Créer un set de musique issu d'une source de différents types possible"
+echo -e "\t\ttype -> directory | spotify "
+echo -e "\t\tsource\t depend du type de source"
+echo -e "\t\t\tdirectory\t chemin vers le dossier contenant les musiques"
+echo -e "!\t\t\tspotify\t Liens vers une playlist(/album) spotify"
+echo -e "\tPeut être lancé sans arguments : créer un set vide"
+echo -e "Modifie le set de musique"
+echo -e "\tadd\t Ajoute une nouvelle source au set"
+echo -e "!\tdel\t Retire une source du set"
+echo -e "Lance une session"
+echo -e "\tplay\t Joue les sous playlist issu du set et avec des pauses entre chaque sous playlist"
