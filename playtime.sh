@@ -4,7 +4,7 @@ if [ "$#" -eq 0 ]; then
     ./readme.sh
     exit 1
 fi
-
+path=$0
 command=$1
 shift 1
 case $command in
@@ -24,4 +24,4 @@ esac
 
 
 
-
+exit 1

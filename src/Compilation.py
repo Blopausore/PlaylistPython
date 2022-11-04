@@ -1,10 +1,11 @@
-import Playlist
 import time
+import Playlist
+
 
 class Compilation:
 #Compilation : set of playlist
-    def __init__(self,playlist : Playlist, temps : float, temps_pause : float, methode = 1):
-        self.playlists = [Playlist]
+    def __init__(self,playlist : Playlist.Playlist(), temps : float, temps_pause : float, methode = 1):
+        self.playlists = [Playlist.Playlist()]
         self.temps_pause = temps_pause
         if methode == 1:
             self.playlists = playlist.doSplitPlaylist1(temps)

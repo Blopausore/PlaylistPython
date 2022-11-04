@@ -6,17 +6,18 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import vlc
 import time
+import playsound
 
 class Musique(ABC):
-
+    
     @abstractmethod
     def __init__(self,path:str):
         pass
-
+    #return a string describtive of the musique
     @abstractmethod
     def toString(self):
         pass
-
+    #play the music
     @abstractmethod
     def doPlay(self):
         pass
@@ -33,24 +34,15 @@ class MusiqueDownload(Musique):
         return self.info.pprint()
 
     def doPlay(self):
-        music = vlc.MediaPlayer(self.path)
-        music.play()
-        time.sleep(self.temps)
+        playsound.playsound(self.path)
+    
         
-
-
-
 
 class MusiqueSpotify(Musique):
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+
     def __init__(self,link:str):
         self.path = link
-        self
 
 
 
-if __name__ == "__main__":
-    rick = Musique("/home/smaug/Documents/Projet-MusiquePlaylist/resources/RickRoll.mp3")
-    print(rick.toString())
-    print(rick.temps,type(rick.temps))
-# %%
