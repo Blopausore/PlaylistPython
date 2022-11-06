@@ -9,9 +9,9 @@ print(path)
 if path not in sys.path:
     sys.path.append(path)
 '''
-from src.Compilation import Compilation
-from src.Playlist import Playlist
 
+import Playlist
+import Compilation
 
 def main(args=sys.argv):
 
@@ -22,14 +22,14 @@ def main(args=sys.argv):
     with open(path+"/sources.data",'r') as sources:
         for type_source in sources:
             type_data,source = type_source.split("::")
-            playlist = Playlist()
+            playlist = Playlist.Playlist()
             if type_data == "directory":
                 playlist.doImportFile(source)
             elif type_data == "spotify":
                 pass
         mother_playlist.doMerge(playlist)
     
-    Compilation(mother_playlist,temps,temps_pause).play()
+    Compilation.Compilation(mother_playlist,temps,temps_pause).doPlay()
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ case $command in
     "play")
         ./command/play.sh $@;;
     "help")
-        ./readme.sh;;
+        ./command/readme.sh;;
     *)
         echo "Erreur : Argument inexistant" 2>/dev/null;
 esac

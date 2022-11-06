@@ -3,7 +3,7 @@
 echo "usage : playtime [command] [options]"
 echo "Commandes pour employer PlayTime:"
 echo "Créer un set de musiques"
-echo -e "\tcreate\t [type] [source] Créer un set de musique issu d'une source de différents types possible"
+echo -e "\tcreate\t [type] [source] Créer un set de musique issu d'une source de différents types possibles"
 echo -e "\t\ttype -> directory | spotify "
 echo -e "\t\tsource\t depend du type de source"
 echo -e "\t\t\tdirectory : Chemin vers le dossier contenant les musiques"

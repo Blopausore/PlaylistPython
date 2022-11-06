@@ -12,7 +12,7 @@ else
     fi
 fi
 
-python3 bashtopy.py $@ 
+python3 src/main.py $@ 
 
 exit 0
 
