@@ -3,29 +3,44 @@
 
 import mutagen.mp3
 from abc import ABC,abstractmethod
-#import spotipy
+import spotipy
 #from spotipy.oauth2 import SpotifyClientCredentials
-import vlc
-import time
 import playsound
 
 class Musique(ABC):
-    
+    """Objet Musique
+    CHAMPS
+    ------
+    temps : int | float
+        Durée de la musique
+    path : str
+        Moyen d'accès à la musique
+    info : str
+        Information supplémentaire sur la musique
+    """ 
     @abstractmethod
+
     def __init__(self,path:str) -> None:
-        self.temps = 0
+        self.temps = 0 
         self.path = path
         self.info = "" 
 
-    #return a string describtive of the musique
+    
     @abstractmethod
-    def toString(self) -> str:
+    def toString(self) -> str: 
+        """Retourne le string reprénsatif de la musique
+        Returns
+        -------
+             : str
+             Information sur la musique
+        """
         pass
-    #play the music
+    #Joue la musique
+
     @abstractmethod
     def doPlay(self) -> None:
+        """Joue la Musique"""
         pass
-
 
 class MusiqueDownload(Musique):
     
@@ -40,7 +55,12 @@ class MusiqueDownload(Musique):
     def doPlay(self):
         playsound.playsound(self.path)
 
+class MusiqueSpotify(Musique):
 
+    def __init__(self,link:str):
+        super().__init__(link)
+
+         
  
 # %%
 if __name__ == "__main__":

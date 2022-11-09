@@ -7,7 +7,15 @@ import spotipy
 import Musique
 
 class Playlist(Musique.Musique):
-#Playlist : a set of music
+    """Un set de musique
+    CHAMPS
+    ------
+    musiques : [Musique]
+        Listes des musiques que contient la playlist
+    temps : int
+        Durée totale de la musique
+    """
+#Playlist : un set de musique
     def __init__(self):
         self.musiques = []
         self.temps = 0. #le temps de la playlist en seconde
@@ -16,6 +24,7 @@ class Playlist(Musique.Musique):
     def len(self):
         return len(playlist.musiques)
 
+    #Initialise une playlist à l'aide d'une liste de musiques
     def doInit(self, musiques : list[Musique.Musique]):
         self.musiques = musiques
         self.temps = sum([musique.temps for musique in musiques])
@@ -27,6 +36,15 @@ class Playlist(Musique.Musique):
 
 
     def doImportFile(self,file_path : str, recurrence=True):
+        """ Importe les musiques issu d'un dossier
+        Parameters
+        ----------
+        file_path : string
+            Chemin du dossier à importer
+        recurrence : bool par défault true
+            Active ou non le parcours de l'arborescense 
+
+        """
         for musique in os.listdir(file_path):
             path=file_path + musique
             if os.path.isdir(path) and recurrence:
@@ -34,6 +52,8 @@ class Playlist(Musique.Musique):
             elif  path.split(".")[-1] == "mp3": 
                 self.doAddMusique(Musique.MusiqueDownload(file_path+musique)) 
  
+    def doImportSpotify(self,link : str):
+        pass
     def __iter__(self):
         self.i = 0
         return self
