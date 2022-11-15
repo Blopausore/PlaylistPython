@@ -1,19 +1,19 @@
-#projet musique-playlist :
+# projet musique-playlist :
 
-##Description
+## Description
 Créer et joue des sous-playlists créer de manière aléatoire d'un temps donnée et créer des
 pauses aux temps voulus.
 
-##Commandes 
+## Commandes 
 
-###Source
+### Source
 Les musiques sont employées en important une ou plusieurs sources de différent types.
 Les différents type de sources qui sont ou seront mis en place :
 * directory : Dossier contenant des musiques (et l'ensemble de ses sous-dossiers) (Opérationnel)
 * spotify : Artiste, album et playlist spotify 
 * deezer, youtube, ... : a envisager  
   
-###Command
+### Command
 
 * playtime [type source] [source]  : Initialise le programme et ajoute éventuellement une source si elle a bien était mis en argument
 * add [type source] [source] : Ajoute une source 
@@ -22,7 +22,7 @@ Les différents type de sources qui sont ou seront mis en place :
 
 Les temps sont à donner en minutes et en valeur entière.
 
-##Road Map
+## Road Map
 
 
 idée de mise à jour :
