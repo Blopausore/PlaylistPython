@@ -3,8 +3,9 @@
 import time
 import Playlist
 import Musique
+from abc import ABC,abstractmethod
 
-class Compilation(Playlist.Playlist):
+class Compilation(ABC):
 #Compilation : set of playlist
     def __init__(self,playlist : Playlist.Playlist, temps : float, temps_pause : float, methode = 1):
         self.temps_pause = temps_pause
@@ -40,6 +41,9 @@ class Compilation(Playlist.Playlist):
     def toString(self):
         "\n".join([playlist.toString() for playlist in self.playlists])
     
+class CompilationMock(Compilation):
+    def __init__(self, playlist = Playlist.PlaylistMock, temps = 10., temps_pause = 1.):
+        pass
 
 # %%
 
