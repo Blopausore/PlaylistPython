@@ -1,9 +1,13 @@
 # projet musique-playlist :
 
 ## Description
-Créer et joue des sous-playlists créer de manière aléatoire d'un temps donnée et créer des
-pauses aux temps voulus.
+A partir d'une bilbiothèque de musiques, ce programme permet de créer et jouer des sous-playlists d'une durée précise. Il est possible générer plusieurs sous-playlist séparé d'un temps de pause donné.
 
+### Exemples
+* Joue sous-playlist A 
+* Pause de 5 minutes
+* Joue sous-playlist B
+* ...
 ## Commandes 
 
 ### Source
